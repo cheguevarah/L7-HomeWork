@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultLabel.text = UserDefaults.standard.string(forKey: "result")
+        bottomField.text = UserDefaults.standard.string(forKey: "history")
+        
         
         
         
@@ -37,7 +38,12 @@ class ViewController: UIViewController {
         let secondLabel = Int(bottomField.text ?? "0")
         globalResult = (firstLabel ?? 0) + (secondLabel ?? 0)
         resultLabel.text = String(globalResult)
-        UserDefaults.standard.set(String(globalResult), forKey: "result")
+        
+        var history = ("\(firstLabel ?? 0) + \(secondLabel ?? 0) = \(globalResult)\n")
+        var savedHistory = UserDefaults.standard.string(forKey: "history") ?? ""
+        savedHistory += history
+        UserDefaults.standard.set(savedHistory, forKey: "history")
+//        UserDefaults.standard.set(String(globalResult), forKey: "result")
         bottomField.font = bottomField.font?.withSize(CGFloat(globalResult))
         
     }
