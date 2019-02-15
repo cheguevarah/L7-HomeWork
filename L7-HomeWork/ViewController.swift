@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resultLabel.text = UserDefaults.standard.string(forKey: "result")
+        bottomField.text = UserDefaults.standard.string(forKey: "history")
         
         
     }
@@ -41,6 +42,8 @@ class ViewController: UIViewController {
         let stringGlobalRes = String(globalResult)
         resultLabel.text = stringGlobalRes
         UserDefaults.standard.set(stringGlobalRes, forKey: "result")
+        var history: String = "\(intFirstLabel ?? 0) + \(intSecondLabel ?? 0) = \(result)"
+        UserDefaults.standard.set(history, forKey: "history")
         bottomField.font = bottomField.font?.withSize(CGFloat(globalResult))
         
     }
