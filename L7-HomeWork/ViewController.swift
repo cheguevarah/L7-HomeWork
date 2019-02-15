@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resultLabel.text = UserDefaults.standard.string(forKey: "result")
-        bottomField.text = UserDefaults.standard.string(forKey: "history")
+        
         
         
     }
@@ -33,20 +33,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func addNumButton() {
-        let firstLabel = topField.text
-        let intFirstLabel = Int(firstLabel ?? "0")
-        let secondLabel = bottomField.text
-        let intSecondLabel = Int(secondLabel ?? "0")
-        let result = (intFirstLabel ?? 0) + (intSecondLabel ?? 0)
-        globalResult = result
-        let stringGlobalRes = String(globalResult)
-        resultLabel.text = stringGlobalRes
-        UserDefaults.standard.set(stringGlobalRes, forKey: "result")
-        var history: String = "\(intFirstLabel ?? 0) + \(intSecondLabel ?? 0) = \(result)"
-        UserDefaults.standard.set(history, forKey: "history")
+        let firstLabel = Int(topField.text ?? "0")
+        let secondLabel = Int(bottomField.text ?? "0")
+        globalResult = (firstLabel ?? 0) + (secondLabel ?? 0)
+        resultLabel.text = String(globalResult)
+        UserDefaults.standard.set(String(globalResult), forKey: "result")
         bottomField.font = bottomField.font?.withSize(CGFloat(globalResult))
         
     }
+    
+   
     
     
     
