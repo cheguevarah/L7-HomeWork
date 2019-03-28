@@ -18,8 +18,6 @@ class ViewController: UIViewController {
         bottomField.text = UserDefaults.standard.string(forKey: "history")
         
         
-        
-        
     }
     
     
@@ -50,7 +48,35 @@ class ViewController: UIViewController {
     
    
     
-    
+//    Задание c лекции:
+//
+//    1. Добавить в storyboard на ViewController два элемента UITextField и UIButton
+//
+//    2. По нажатию на кнопку:
+//
+//    - Вывести содержимое UITextField в консоль
+//
+//    - Привести содержимое UITextField к типу Int
+//
+//    - Добавить к написанному числу в UITextField 5
+//
+//    - Записать результат в глобальную переменную
+//
+//    - Добавить UILabel и выводить результат в него
+//
+//    - Сохранять результат в UserDefults
+//
+//    - Отображать сохранённый результат в UILabel при запуске приложения
+//
+//    - Добавить UITextView для извлечения второго элемента суммы (вместо 5)
+//
+//    - Задать размер текста в UITextView в зависимости от числа суммы написаного в UILabel
+//
+//    - Сохранять историю в UserDefaults
+//
+//    - Отображать историю в UITextView при старте приложения
+//
+
     
     
     
